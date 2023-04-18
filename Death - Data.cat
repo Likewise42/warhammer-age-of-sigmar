@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<catalogue id="e37a-2f18-f168-6ed3" name="Death - Data" revision="134" battleScribeVersion="2.03" authorName="" authorContact="@BSData" authorUrl="https://github.com/BSData/warhammer-age-of-sigmar" library="true" gameSystemId="e51d-b1a3-75fc-dc33" gameSystemRevision="161" xmlns="http://www.battlescribe.net/schema/catalogueSchema">
+<catalogue id="e37a-2f18-f168-6ed3" name="Death - Data" revision="138" battleScribeVersion="2.03" authorName="" authorContact="@BSData" authorUrl="https://github.com/BSData/warhammer-age-of-sigmar" library="true" gameSystemId="e51d-b1a3-75fc-dc33" gameSystemRevision="161" xmlns="http://www.battlescribe.net/schema/catalogueSchema">
   <publications>
     <publication id="e320-d5ec-pubN65537" name="Battletome: Legions of Nagash and Battletome: Nighthaunt"/>
     <publication id="e320-d5ec-pubN65555" name="Battletome: Nighthaunt"/>
@@ -196,6 +196,8 @@
     <categoryEntry id="715f-c006-cdfe-2649" name="CADO EZECHIAR" hidden="false"/>
     <categoryEntry id="35bf-a5e8-b9c2-07b2" name="HEKATOS" hidden="false"/>
     <categoryEntry id="24ff-9b12-e05e-7ff3" name="Soulblight Warscroll Battalion" hidden="false"/>
+    <categoryEntry id="a754-357e-3fa1-9c83" name="Arkhan General" hidden="false"/>
+    <categoryEntry id="9ae0-cf45-e7ad-d53e" name="Nagash General" hidden="false"/>
   </categoryEntries>
   <sharedSelectionEntries>
     <selectionEntry id="7f4c-7d4b-6b8e-575b" name="Allegiance" hidden="false" collective="false" import="true" type="upgrade">
@@ -491,10 +493,11 @@ If that unit is an IMMORTIS GUARD or NECROPOLIS STALKERS unit, you can either he
           </modifiers>
           <categoryLinks>
             <categoryLink id="7262-a68e-2319-ebb4" name="Unique General" hidden="false" targetId="fe3f-d230-7e2c-fba2" primary="false"/>
+            <categoryLink id="e55b-1551-580d-9b8b" name="Arkhan General" hidden="false" targetId="a754-357e-3fa1-9c83" primary="false"/>
           </categoryLinks>
         </entryLink>
         <entryLink id="8b63-21f2-8e1e-5cbb" name="Battalions" hidden="false" collective="false" import="true" targetId="9df7-269b-fa20-74b2" type="selectionEntryGroup"/>
-        <entryLink id="8062-38e9-6f55-99b8" name="Arkan Spell Lore" hidden="false" collective="false" import="true" targetId="5e3b-60cc-c628-b22f" type="selectionEntry">
+        <entryLink id="8062-38e9-6f55-99b8" name="Arkhan Spell Lore" hidden="false" collective="false" import="true" targetId="5e3b-60cc-c628-b22f" type="selectionEntry">
           <constraints>
             <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="b303-64d4-2809-00da" type="min"/>
             <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="ff7a-bdb3-e506-dbd3" type="max"/>
@@ -1848,6 +1851,18 @@ If that unit is an IMMORTIS GUARD or NECROPOLIS STALKERS unit, you can either he
       </costs>
     </selectionEntry>
     <selectionEntry id="e1b6-d729-99e0-dbfa" name="Morghast Archai" page="135" hidden="false" collective="false" import="true" type="unit">
+      <modifiers>
+        <modifier type="set-primary" field="category" value="e9f2-765a-b7b8-ce8e">
+          <conditionGroups>
+            <conditionGroup type="or">
+              <conditions>
+                <condition field="selections" scope="roster" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="9ae0-cf45-e7ad-d53e" type="equalTo"/>
+                <condition field="selections" scope="roster" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="a754-357e-3fa1-9c83" type="equalTo"/>
+              </conditions>
+            </conditionGroup>
+          </conditionGroups>
+        </modifier>
+      </modifiers>
       <profiles>
         <profile id="434f-8c15-0393-a41c" name="Heralds of the Accursed One" hidden="false" typeId="c924-5a68-471a-2fd5" typeName="Unit Abilities">
           <characteristics>
@@ -1893,10 +1908,15 @@ If that unit is an IMMORTIS GUARD or NECROPOLIS STALKERS unit, you can either he
                 <condition field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="0a8d-cde8-fba1-6c0d" type="equalTo"/>
               </conditions>
             </modifier>
+            <modifier type="set" field="name" value="6 Morghast Archai">
+              <conditions>
+                <condition field="selections" scope="parent" value="2.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="0a8d-cde8-fba1-6c0d" type="equalTo"/>
+              </conditions>
+            </modifier>
           </modifiers>
           <constraints>
             <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="false" includeChildSelections="false" includeChildForces="false" id="minSelections" type="min"/>
-            <constraint field="selections" scope="parent" value="3.0" percentValue="false" shared="false" includeChildSelections="false" includeChildForces="false" id="maxSelections" type="max"/>
+            <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="false" includeChildSelections="false" includeChildForces="false" id="maxSelections" type="max"/>
           </constraints>
           <costs>
             <cost name="pts" typeId="points" value="240.0"/>
@@ -1952,6 +1972,18 @@ If that unit is an IMMORTIS GUARD or NECROPOLIS STALKERS unit, you can either he
       <entryLinks>
         <entryLink id="8ca9-d8d3-3c2e-f09f" name="Battalions" hidden="false" collective="false" import="true" targetId="9df7-269b-fa20-74b2" type="selectionEntryGroup"/>
         <entryLink id="6af4-6cc9-ef15-8ab7" name="Reinforced" hidden="false" collective="false" import="true" targetId="0a8d-cde8-fba1-6c0d" type="selectionEntry">
+          <modifiers>
+            <modifier type="set" field="95f2-6885-756f-9ea5" value="2.0">
+              <conditionGroups>
+                <conditionGroup type="or">
+                  <conditions>
+                    <condition field="selections" scope="roster" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="9ae0-cf45-e7ad-d53e" type="equalTo"/>
+                    <condition field="selections" scope="roster" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="a754-357e-3fa1-9c83" type="equalTo"/>
+                  </conditions>
+                </conditionGroup>
+              </conditionGroups>
+            </modifier>
+          </modifiers>
           <costs>
             <cost name="pts" typeId="points" value="240.0"/>
           </costs>
@@ -1962,6 +1994,18 @@ If that unit is an IMMORTIS GUARD or NECROPOLIS STALKERS unit, you can either he
       </costs>
     </selectionEntry>
     <selectionEntry id="5bd1-6315-591d-08c8" name="Morghast Harbingers" page="135" hidden="false" collective="false" import="true" type="unit">
+      <modifiers>
+        <modifier type="set-primary" field="category" value="e9f2-765a-b7b8-ce8e">
+          <conditionGroups>
+            <conditionGroup type="or">
+              <conditions>
+                <condition field="selections" scope="roster" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="9ae0-cf45-e7ad-d53e" type="equalTo"/>
+                <condition field="selections" scope="roster" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="a754-357e-3fa1-9c83" type="equalTo"/>
+              </conditions>
+            </conditionGroup>
+          </conditionGroups>
+        </modifier>
+      </modifiers>
       <profiles>
         <profile id="539f-f5a0-a35e-b4fa" name="Morghast Harbingers" hidden="false" typeId="1960-ca8e-67ce-2014" typeName="Unit">
           <characteristics>
@@ -2007,10 +2051,15 @@ If that unit is an IMMORTIS GUARD or NECROPOLIS STALKERS unit, you can either he
                 <condition field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="0a8d-cde8-fba1-6c0d" type="equalTo"/>
               </conditions>
             </modifier>
+            <modifier type="set" field="name" value="6 Morghast Harbingers">
+              <conditions>
+                <condition field="selections" scope="parent" value="2.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="0a8d-cde8-fba1-6c0d" type="equalTo"/>
+              </conditions>
+            </modifier>
           </modifiers>
           <constraints>
             <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="false" includeChildSelections="false" includeChildForces="false" id="minSelections" type="min"/>
-            <constraint field="selections" scope="parent" value="3.0" percentValue="false" shared="false" includeChildSelections="false" includeChildForces="false" id="maxSelections" type="max"/>
+            <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="false" includeChildSelections="false" includeChildForces="false" id="maxSelections" type="max"/>
           </constraints>
           <costs>
             <cost name="pts" typeId="points" value="240.0"/>
@@ -2066,6 +2115,18 @@ If that unit is an IMMORTIS GUARD or NECROPOLIS STALKERS unit, you can either he
       <entryLinks>
         <entryLink id="7519-206f-7598-537c" name="Battalions" hidden="false" collective="false" import="true" targetId="9df7-269b-fa20-74b2" type="selectionEntryGroup"/>
         <entryLink id="8e5a-81ec-e1cf-381f" name="Reinforced" hidden="false" collective="false" import="true" targetId="0a8d-cde8-fba1-6c0d" type="selectionEntry">
+          <modifiers>
+            <modifier type="set" field="95f2-6885-756f-9ea5" value="2.0">
+              <conditionGroups>
+                <conditionGroup type="or">
+                  <conditions>
+                    <condition field="selections" scope="roster" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="9ae0-cf45-e7ad-d53e" type="equalTo"/>
+                    <condition field="selections" scope="roster" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="a754-357e-3fa1-9c83" type="equalTo"/>
+                  </conditions>
+                </conditionGroup>
+              </conditionGroups>
+            </modifier>
+          </modifiers>
           <costs>
             <cost name="pts" typeId="points" value="240.0"/>
           </costs>
@@ -2292,6 +2353,7 @@ If that unit is an IMMORTIS GUARD or NECROPOLIS STALKERS unit, you can either he
         <categoryLink id="40e3-71b7-bab9-d20e" name="Behemoth" hidden="false" targetId="fa0c-9044-2568-fa02" primary="false"/>
         <categoryLink id="2e59-f394-89f0-4274" name="New CategoryLink" hidden="false" targetId="6c6b-e787-f9b8-a510" primary="true"/>
         <categoryLink id="f788-186b-8320-a897" name="Unique" hidden="false" targetId="088b-3a27-03f7-8249" primary="false"/>
+        <categoryLink id="63be-5dc1-bbea-cc8f" name="Nagash General" hidden="false" targetId="9ae0-cf45-e7ad-d53e" primary="false"/>
       </categoryLinks>
       <selectionEntries>
         <selectionEntry id="fcd1-e57b-6b45-23b8" name="Spectral Claws and Daggers" hidden="false" collective="false" import="true" type="upgrade">
@@ -3600,6 +3662,7 @@ If that unit is an IMMORTIS GUARD or NECROPOLIS STALKERS unit, you can either he
         <categoryLink id="866e-1aa6-79b7-5a0d" name="New CategoryLink" hidden="false" targetId="6c6b-e787-f9b8-a510" primary="true"/>
         <categoryLink id="19fc-4e7b-b468-c3a5" name="SOULBLIGHT GRAVELORDS" hidden="false" targetId="3d31-12d5-6735-011c" primary="false"/>
         <categoryLink id="c4b9-e667-d4cb-0619" name="9 or less wounds Leader" hidden="false" targetId="a8ed-ca35-24e0-cf2e" primary="false"/>
+        <categoryLink id="37db-9f8a-9048-fa0c" name="SUMMONABLE" hidden="false" targetId="d51a-b7de-3b60-a231" primary="false"/>
       </categoryLinks>
       <selectionEntries>
         <selectionEntry id="670c-a387-2011-1331" name="Baleful Tomb Blade" hidden="false" collective="false" import="true" type="upgrade">
@@ -3672,6 +3735,7 @@ If that unit is an IMMORTIS GUARD or NECROPOLIS STALKERS unit, you can either he
         <categoryLink id="4690-0f85-2a0e-93cb" name="SOULBLIGHT GRAVELORDS" hidden="false" targetId="3d31-12d5-6735-011c" primary="false"/>
         <categoryLink id="03af-1ef7-eea5-78b3" name="WIGHT KING ON SKELETAL STEED" hidden="false" targetId="95c5-5182-51d5-4f1a" primary="false"/>
         <categoryLink id="d81c-a594-1318-8a5c" name="9 or less wounds Leader" hidden="false" targetId="a8ed-ca35-24e0-cf2e" primary="false"/>
+        <categoryLink id="c4f5-bb5f-b9bd-59ec" name="SUMMONABLE" hidden="false" targetId="d51a-b7de-3b60-a231" primary="false"/>
       </categoryLinks>
       <selectionEntries>
         <selectionEntry id="f60f-2721-96ee-8e99" name="Tomb Lance" hidden="false" collective="false" import="true" type="upgrade">
@@ -4165,6 +4229,9 @@ If that unit is an IMMORTIS GUARD or NECROPOLIS STALKERS unit, you can either he
         <categoryLink id="6380-6788-7313-f68f" name="Soulblight Warscroll Battalion" hidden="false" targetId="24ff-9b12-e05e-7ff3" primary="false"/>
         <categoryLink id="1752-858f-06ad-cda2" name="Battalion" hidden="false" targetId="3ecc-4c0d-d717-29bd" primary="false"/>
       </categoryLinks>
+      <costs>
+        <cost name="pts" typeId="points" value="0.0"/>
+      </costs>
     </selectionEntry>
     <selectionEntry id="0911-b06f-7349-987a" name="Battalion: Castellans of the Crimson Keep" hidden="false" collective="false" import="true" type="upgrade">
       <profiles>
@@ -5607,6 +5674,24 @@ end of that phase.</characteristic>
         <entryLink id="240c-0e61-1381-52a1" name="Spell Lores" hidden="false" collective="false" import="true" targetId="8417-93fc-9562-a748" type="selectionEntryGroup"/>
         <entryLink id="e4d6-d0ea-d4f4-efcf" name="Battalions" hidden="false" collective="false" import="true" targetId="9df7-269b-fa20-74b2" type="selectionEntryGroup"/>
         <entryLink id="20ad-eaf8-a462-ad39" name="Incarnate Bonding" hidden="false" collective="false" import="true" targetId="c890-acbd-0c80-55c9" type="selectionEntryGroup"/>
+        <entryLink id="a3b6-2ccb-e06a-95d2" name="Artefacts" hidden="true" collective="false" import="true" targetId="a2c1-3fba-5acb-d560" type="selectionEntryGroup">
+          <modifiers>
+            <modifier type="set" field="hidden" value="false">
+              <conditions>
+                <condition field="selections" scope="roster" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="9fec-247c-d146-ead4" type="greaterThan"/>
+              </conditions>
+            </modifier>
+          </modifiers>
+        </entryLink>
+        <entryLink id="4fa4-d01f-c354-d91f" name="Command Traits" hidden="true" collective="false" import="true" targetId="eda1-7945-4fea-a145" type="selectionEntryGroup">
+          <modifiers>
+            <modifier type="set" field="hidden" value="false">
+              <conditions>
+                <condition field="selections" scope="roster" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="9fec-247c-d146-ead4" type="greaterThan"/>
+              </conditions>
+            </modifier>
+          </modifiers>
+        </entryLink>
       </entryLinks>
       <costs>
         <cost name="pts" typeId="points" value="130.0"/>
@@ -5708,6 +5793,24 @@ end of that phase.</characteristic>
         </entryLink>
         <entryLink id="7073-cdeb-2cdb-bc60" name="Battalions" hidden="false" collective="false" import="true" targetId="9df7-269b-fa20-74b2" type="selectionEntryGroup"/>
         <entryLink id="ddd9-d70b-cce4-2053" name="Incarnate Bonding" hidden="false" collective="false" import="true" targetId="c890-acbd-0c80-55c9" type="selectionEntryGroup"/>
+        <entryLink id="901a-58dc-c74c-ce2f" name="Artefacts" hidden="true" collective="false" import="true" targetId="a2c1-3fba-5acb-d560" type="selectionEntryGroup">
+          <modifiers>
+            <modifier type="set" field="hidden" value="false">
+              <conditions>
+                <condition field="selections" scope="roster" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="9fec-247c-d146-ead4" type="greaterThan"/>
+              </conditions>
+            </modifier>
+          </modifiers>
+        </entryLink>
+        <entryLink id="a346-6e73-e904-0b1f" name="Command Traits" hidden="true" collective="false" import="true" targetId="eda1-7945-4fea-a145" type="selectionEntryGroup">
+          <modifiers>
+            <modifier type="set" field="hidden" value="false">
+              <conditions>
+                <condition field="selections" scope="roster" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="9fec-247c-d146-ead4" type="greaterThan"/>
+              </conditions>
+            </modifier>
+          </modifiers>
+        </entryLink>
       </entryLinks>
       <costs>
         <cost name="pts" typeId="points" value="125.0"/>
@@ -5747,6 +5850,7 @@ end of that phase.</characteristic>
         <categoryLink id="dbb2-b06b-6dd3-0a2b" name="VYRKOS_DYNASTY" hidden="false" targetId="c8b9-d6b2-34c8-79e5" primary="false"/>
         <categoryLink id="5cd0-9e52-c4a4-07c7" name="9 or less wounds Leader" hidden="false" targetId="a8ed-ca35-24e0-cf2e" primary="false"/>
         <categoryLink id="39d9-b604-e213-3044" name="Unique" hidden="false" targetId="088b-3a27-03f7-8249" primary="false"/>
+        <categoryLink id="4609-9755-b174-9cb4" name="SUMMONABLE" hidden="false" targetId="d51a-b7de-3b60-a231" primary="false"/>
       </categoryLinks>
       <selectionEntries>
         <selectionEntry id="7fe3-c168-b6b5-06d3" name="Cursed Halberd" hidden="false" collective="false" import="true" type="upgrade">
@@ -5780,6 +5884,24 @@ end of that phase.</characteristic>
         </entryLink>
         <entryLink id="3f1c-d823-2d99-512e" name="Battalions" hidden="false" collective="false" import="true" targetId="9df7-269b-fa20-74b2" type="selectionEntryGroup"/>
         <entryLink id="b582-a088-2882-2362" name="Incarnate Bonding" hidden="false" collective="false" import="true" targetId="c890-acbd-0c80-55c9" type="selectionEntryGroup"/>
+        <entryLink id="152e-a7e3-204d-d513" name="Command Traits" hidden="true" collective="false" import="true" targetId="eda1-7945-4fea-a145" type="selectionEntryGroup">
+          <modifiers>
+            <modifier type="set" field="hidden" value="false">
+              <conditions>
+                <condition field="selections" scope="roster" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="9fec-247c-d146-ead4" type="greaterThan"/>
+              </conditions>
+            </modifier>
+          </modifiers>
+        </entryLink>
+        <entryLink id="e6af-cd35-8241-7fb7" name="Artefacts" hidden="true" collective="false" import="true" targetId="a2c1-3fba-5acb-d560" type="selectionEntryGroup">
+          <modifiers>
+            <modifier type="set" field="hidden" value="false">
+              <conditions>
+                <condition field="selections" scope="roster" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="9fec-247c-d146-ead4" type="greaterThan"/>
+              </conditions>
+            </modifier>
+          </modifiers>
+        </entryLink>
       </entryLinks>
       <costs>
         <cost name="pts" typeId="points" value="110.0"/>
@@ -5851,6 +5973,24 @@ end of that phase.</characteristic>
         </entryLink>
         <entryLink id="e837-f469-d1e3-376c" name="Battalions" hidden="false" collective="false" import="true" targetId="9df7-269b-fa20-74b2" type="selectionEntryGroup"/>
         <entryLink id="891d-08d9-a642-7bcd" name="Incarnate Bonding" hidden="false" collective="false" import="true" targetId="c890-acbd-0c80-55c9" type="selectionEntryGroup"/>
+        <entryLink id="104d-920e-aafa-b0cd" name="Artefacts" hidden="true" collective="false" import="true" targetId="a2c1-3fba-5acb-d560" type="selectionEntryGroup">
+          <modifiers>
+            <modifier type="set" field="hidden" value="false">
+              <conditions>
+                <condition field="selections" scope="roster" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="9fec-247c-d146-ead4" type="greaterThan"/>
+              </conditions>
+            </modifier>
+          </modifiers>
+        </entryLink>
+        <entryLink id="af03-65e6-75b5-ee85" name="Command Traits" hidden="true" collective="false" import="true" targetId="eda1-7945-4fea-a145" type="selectionEntryGroup">
+          <modifiers>
+            <modifier type="set" field="hidden" value="false">
+              <conditions>
+                <condition field="selections" scope="roster" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="9fec-247c-d146-ead4" type="greaterThan"/>
+              </conditions>
+            </modifier>
+          </modifiers>
+        </entryLink>
       </entryLinks>
       <costs>
         <cost name="pts" typeId="points" value="120.0"/>
@@ -5894,7 +6034,6 @@ end of that phase.</characteristic>
         <categoryLink id="4527-eba3-dff9-991e" name="SOULBLIGHT GRAVELORDS" hidden="false" targetId="3d31-12d5-6735-011c" primary="false"/>
         <categoryLink id="2ca2-a2b4-5df5-f430" name="VYRKOS_DYNASTY" hidden="false" targetId="c8b9-d6b2-34c8-79e5" primary="false"/>
         <categoryLink id="cc47-177b-87eb-2b91" name="DEADWALKERS" hidden="false" targetId="cba7-18df-b7ae-3365" primary="false"/>
-        <categoryLink id="01d9-ab81-4ac8-ec49" name="Unique" hidden="false" targetId="088b-3a27-03f7-8249" primary="false"/>
       </categoryLinks>
       <selectionEntries>
         <selectionEntry id="e27b-ecba-76f1-8492" name="Bardiche" hidden="false" collective="false" import="true" type="upgrade">
@@ -6455,6 +6594,24 @@ end of that phase.</characteristic>
         </entryLink>
         <entryLink id="6cab-607f-aa66-ca57" name="Battalions" hidden="false" collective="false" import="true" targetId="9df7-269b-fa20-74b2" type="selectionEntryGroup"/>
         <entryLink id="6f5d-c0f9-e8c0-b3f3" name="Incarnate Bonding" hidden="false" collective="false" import="true" targetId="c890-acbd-0c80-55c9" type="selectionEntryGroup"/>
+        <entryLink id="2a86-8f98-ee47-84fd" name="Artefacts" hidden="true" collective="false" import="true" targetId="a2c1-3fba-5acb-d560" type="selectionEntryGroup">
+          <modifiers>
+            <modifier type="set" field="hidden" value="false">
+              <conditions>
+                <condition field="selections" scope="roster" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="9fec-247c-d146-ead4" type="greaterThan"/>
+              </conditions>
+            </modifier>
+          </modifiers>
+        </entryLink>
+        <entryLink id="f64f-df5b-d523-4a27" name="Command Traits" hidden="true" collective="false" import="true" targetId="eda1-7945-4fea-a145" type="selectionEntryGroup">
+          <modifiers>
+            <modifier type="set" field="hidden" value="false">
+              <conditions>
+                <condition field="selections" scope="roster" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="9fec-247c-d146-ead4" type="greaterThan"/>
+              </conditions>
+            </modifier>
+          </modifiers>
+        </entryLink>
       </entryLinks>
       <costs>
         <cost name="pts" typeId="points" value="290.0"/>
@@ -6578,6 +6735,24 @@ If any models in that unit were slain by this spell, before removing the slain m
         <entryLink id="17ec-e077-2af1-52a7" name="Spell Lores" hidden="false" collective="false" import="true" targetId="8417-93fc-9562-a748" type="selectionEntryGroup"/>
         <entryLink id="db83-1bd9-bddf-6048" name="Battalions" hidden="false" collective="false" import="true" targetId="9df7-269b-fa20-74b2" type="selectionEntryGroup"/>
         <entryLink id="9b75-3c5d-5fbc-a99e" name="Incarnate Bonding" hidden="false" collective="false" import="true" targetId="c890-acbd-0c80-55c9" type="selectionEntryGroup"/>
+        <entryLink id="df7f-0101-a502-fdaa" name="Command Traits" hidden="true" collective="false" import="true" targetId="eda1-7945-4fea-a145" type="selectionEntryGroup">
+          <modifiers>
+            <modifier type="set" field="hidden" value="false">
+              <conditions>
+                <condition field="selections" scope="roster" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="9fec-247c-d146-ead4" type="greaterThan"/>
+              </conditions>
+            </modifier>
+          </modifiers>
+        </entryLink>
+        <entryLink id="0af6-db95-ba12-9004" name="Artefacts" hidden="true" collective="false" import="true" targetId="a2c1-3fba-5acb-d560" type="selectionEntryGroup">
+          <modifiers>
+            <modifier type="set" field="hidden" value="false">
+              <conditions>
+                <condition field="selections" scope="roster" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="9fec-247c-d146-ead4" type="greaterThan"/>
+              </conditions>
+            </modifier>
+          </modifiers>
+        </entryLink>
       </entryLinks>
       <costs>
         <cost name="pts" typeId="points" value="170.0"/>
@@ -6653,6 +6828,24 @@ If any models in that unit were slain by this spell, before removing the slain m
         </entryLink>
         <entryLink id="d151-a09f-565c-6c39" name="Battalions" hidden="false" collective="false" import="true" targetId="9df7-269b-fa20-74b2" type="selectionEntryGroup"/>
         <entryLink id="e93c-2561-1d58-a703" name="Incarnate Bonding" hidden="false" collective="false" import="true" targetId="c890-acbd-0c80-55c9" type="selectionEntryGroup"/>
+        <entryLink id="1e6a-b9d1-0e85-e432" name="Artefacts" hidden="true" collective="false" import="true" targetId="a2c1-3fba-5acb-d560" type="selectionEntryGroup">
+          <modifiers>
+            <modifier type="set" field="hidden" value="false">
+              <conditions>
+                <condition field="selections" scope="roster" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="9fec-247c-d146-ead4" type="greaterThan"/>
+              </conditions>
+            </modifier>
+          </modifiers>
+        </entryLink>
+        <entryLink id="f581-bb00-0811-9a5f" name="Command Traits" hidden="true" collective="false" import="true" targetId="eda1-7945-4fea-a145" type="selectionEntryGroup">
+          <modifiers>
+            <modifier type="set" field="hidden" value="false">
+              <conditions>
+                <condition field="selections" scope="roster" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="9fec-247c-d146-ead4" type="greaterThan"/>
+              </conditions>
+            </modifier>
+          </modifiers>
+        </entryLink>
       </entryLinks>
       <costs>
         <cost name="pts" typeId="points" value="120.0"/>
@@ -6728,6 +6921,24 @@ If any models in that unit were slain by this spell, before removing the slain m
         </entryLink>
         <entryLink id="f6b8-a5ea-48af-98cf" name="Battalions" hidden="false" collective="false" import="true" targetId="9df7-269b-fa20-74b2" type="selectionEntryGroup"/>
         <entryLink id="c6e2-00e8-4e8a-9aba" name="Incarnate Bonding" hidden="false" collective="false" import="true" targetId="c890-acbd-0c80-55c9" type="selectionEntryGroup"/>
+        <entryLink id="41e0-34bd-33a9-d054" name="Command Traits" hidden="true" collective="false" import="true" targetId="eda1-7945-4fea-a145" type="selectionEntryGroup">
+          <modifiers>
+            <modifier type="set" field="hidden" value="false">
+              <conditions>
+                <condition field="selections" scope="roster" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="9fec-247c-d146-ead4" type="greaterThan"/>
+              </conditions>
+            </modifier>
+          </modifiers>
+        </entryLink>
+        <entryLink id="0331-8d8a-1c37-81dc" name="Artefacts" hidden="true" collective="false" import="true" targetId="a2c1-3fba-5acb-d560" type="selectionEntryGroup">
+          <modifiers>
+            <modifier type="set" field="hidden" value="false">
+              <conditions>
+                <condition field="selections" scope="roster" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="9fec-247c-d146-ead4" type="greaterThan"/>
+              </conditions>
+            </modifier>
+          </modifiers>
+        </entryLink>
       </entryLinks>
       <costs>
         <cost name="pts" typeId="points" value="120.0"/>
@@ -6818,6 +7029,24 @@ If any models in that unit were slain by this spell, before removing the slain m
         </entryLink>
         <entryLink id="eccd-11d5-756f-67a1" name="Battalions" hidden="false" collective="false" import="true" targetId="9df7-269b-fa20-74b2" type="selectionEntryGroup"/>
         <entryLink id="4462-80c3-c107-3a41" name="Incarnate Bonding" hidden="false" collective="false" import="true" targetId="c890-acbd-0c80-55c9" type="selectionEntryGroup"/>
+        <entryLink id="64d0-fdf7-919b-721d" name="Artefacts" hidden="true" collective="false" import="true" targetId="a2c1-3fba-5acb-d560" type="selectionEntryGroup">
+          <modifiers>
+            <modifier type="set" field="hidden" value="false">
+              <conditions>
+                <condition field="selections" scope="roster" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="9fec-247c-d146-ead4" type="greaterThan"/>
+              </conditions>
+            </modifier>
+          </modifiers>
+        </entryLink>
+        <entryLink id="f3e3-be4b-45f1-7ff4" name="Command Traits" hidden="true" collective="false" import="true" targetId="eda1-7945-4fea-a145" type="selectionEntryGroup">
+          <modifiers>
+            <modifier type="set" field="hidden" value="false">
+              <conditions>
+                <condition field="selections" scope="roster" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="9fec-247c-d146-ead4" type="greaterThan"/>
+              </conditions>
+            </modifier>
+          </modifiers>
+        </entryLink>
       </entryLinks>
       <costs>
         <cost name="pts" typeId="points" value="220.0"/>
@@ -6970,9 +7199,6 @@ If you pick a SUMMONABLE HERO, on a 4+, you set up that HERO wholly within 12&qu
           </characteristics>
         </profile>
       </profiles>
-      <infoLinks>
-        <infoLink id="ae52-999f-6bbe-b76e" name="Invigorating Aura" publicationId="7a08-6611-3750-6469" page="84" hidden="false" targetId="b8d4-2c83-950e-a799" type="profile"/>
-      </infoLinks>
       <selectionEntryGroups>
         <selectionEntryGroup id="3144-1d65-44b5-fa9f" name="The Cursed Bloodlines" hidden="false" collective="false" import="true">
           <constraints>
@@ -7734,6 +7960,24 @@ Spirit of the Fallen: If an attack made by this unit wounds the target, that att
         <entryLink id="b2b8-6326-1265-1e61" name="Battalions" hidden="false" collective="false" import="true" targetId="9df7-269b-fa20-74b2" type="selectionEntryGroup"/>
         <entryLink id="51fa-92c8-3d50-9eac" name="Incarnate Bonding" hidden="false" collective="false" import="true" targetId="c890-acbd-0c80-55c9" type="selectionEntryGroup"/>
         <entryLink id="4096-73a6-6192-3855" name="Spell Lores" hidden="false" collective="false" import="true" targetId="8417-93fc-9562-a748" type="selectionEntryGroup"/>
+        <entryLink id="9fb5-0fda-d4a4-53e7" name="Artefacts" hidden="true" collective="false" import="true" targetId="a2c1-3fba-5acb-d560" type="selectionEntryGroup">
+          <modifiers>
+            <modifier type="set" field="hidden" value="false">
+              <conditions>
+                <condition field="selections" scope="roster" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="9fec-247c-d146-ead4" type="greaterThan"/>
+              </conditions>
+            </modifier>
+          </modifiers>
+        </entryLink>
+        <entryLink id="93f4-19ba-30d5-cc16" name="Command Traits" hidden="true" collective="false" import="true" targetId="eda1-7945-4fea-a145" type="selectionEntryGroup">
+          <modifiers>
+            <modifier type="set" field="hidden" value="false">
+              <conditions>
+                <condition field="selections" scope="roster" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="9fec-247c-d146-ead4" type="greaterThan"/>
+              </conditions>
+            </modifier>
+          </modifiers>
+        </entryLink>
       </entryLinks>
       <costs>
         <cost name="pts" typeId="points" value="135.0"/>
@@ -7764,6 +8008,9 @@ Spirit of the Fallen: If an attack made by this unit wounds the target, that att
         <categoryLink id="5506-49ef-d6d2-adbd" name="Soulblight Warscroll Battalion" hidden="false" targetId="24ff-9b12-e05e-7ff3" primary="false"/>
         <categoryLink id="335d-f16e-cb3a-6d2d" name="Battalion" hidden="false" targetId="3ecc-4c0d-d717-29bd" primary="false"/>
       </categoryLinks>
+      <costs>
+        <cost name="pts" typeId="points" value="0.0"/>
+      </costs>
     </selectionEntry>
     <selectionEntry id="936b-d5ab-0498-b9a5" name="Soulblight Warscroll Battalion: Fellwing Flock" hidden="true" collective="false" import="true" type="upgrade">
       <modifiers>
@@ -7789,6 +8036,9 @@ Spirit of the Fallen: If an attack made by this unit wounds the target, that att
         <categoryLink id="3360-418b-6764-f44f" name="Soulblight Warscroll Battalion" hidden="false" targetId="24ff-9b12-e05e-7ff3" primary="false"/>
         <categoryLink id="7061-3a5a-3bee-c4bf" name="Battalion" hidden="false" targetId="3ecc-4c0d-d717-29bd" primary="false"/>
       </categoryLinks>
+      <costs>
+        <cost name="pts" typeId="points" value="0.0"/>
+      </costs>
     </selectionEntry>
     <selectionEntry id="2302-34d1-c837-fb89" name="Soulblight Warscroll Battalion: Deathstench Drove" hidden="true" collective="false" import="true" type="upgrade">
       <modifiers>
@@ -7816,6 +8066,9 @@ Spirit of the Fallen: If an attack made by this unit wounds the target, that att
         <categoryLink id="846f-adff-e7e5-50d0" name="Soulblight Warscroll Battalion" hidden="false" targetId="24ff-9b12-e05e-7ff3" primary="false"/>
         <categoryLink id="36db-d6d6-79dd-26f3" name="Battalion" hidden="false" targetId="3ecc-4c0d-d717-29bd" primary="false"/>
       </categoryLinks>
+      <costs>
+        <cost name="pts" typeId="points" value="0.0"/>
+      </costs>
     </selectionEntry>
   </sharedSelectionEntries>
   <sharedSelectionEntryGroups>
@@ -8505,9 +8758,14 @@ Spirit of the Fallen: If an attack made by this unit wounds the target, that att
     <selectionEntryGroup id="eda1-7945-4fea-a145" name="Command Traits" hidden="false" collective="false" import="true">
       <modifiers>
         <modifier type="set" field="hidden" value="true">
-          <conditions>
-            <condition field="selections" scope="parent" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="b745-17c4-8fbf-8b04" type="equalTo"/>
-          </conditions>
+          <conditionGroups>
+            <conditionGroup type="and">
+              <conditions>
+                <condition field="selections" scope="parent" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="b745-17c4-8fbf-8b04" type="equalTo"/>
+                <condition field="selections" scope="roster" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="9fec-247c-d146-ead4" type="equalTo"/>
+              </conditions>
+            </conditionGroup>
+          </conditionGroups>
         </modifier>
       </modifiers>
       <constraints>
@@ -10309,19 +10567,73 @@ You can set up 1 unit in the Crimson Keep for each unit you have set up on the b
         <constraint field="selections" scope="roster" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" id="f115-7d0b-8b25-3930" type="max"/>
       </constraints>
       <selectionEntries>
-        <selectionEntry id="4a34-3b75-da45-c09d" name="Vampiric Conquerors" hidden="false" collective="false" import="true" type="upgrade">
+        <selectionEntry id="4a34-3b75-da45-c09d" name="Lust for Domination" hidden="false" collective="false" import="true" type="upgrade">
           <constraints>
             <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" id="4b71-d6da-d72c-a1c2" type="max"/>
           </constraints>
           <profiles>
-            <profile id="cbaa-2021-c305-8e61" name="Vampiric Conquerors" hidden="false" typeId="9c01-ec20-32c1-0948" typeName="Grand Strategy">
+            <profile id="cbaa-2021-c305-8e61" name="Lust for Domination" hidden="false" typeId="9c01-ec20-32c1-0948" typeName="Grand Strategy">
               <characteristics>
-                <characteristic name="Description" typeId="53c8-cc18-16d1-e890">When the battle ends, you complete this grand strategy if you control more gravesites than your opponent.  Control of gravesites is determined in the same way as control of objective markers.</characteristic>
+                <characteristic name="Description" typeId="53c8-cc18-16d1-e890">When the battle ends, you complete this grand strategy if you control more gravesites than your opponent.  Control of gravesites is determined in the same way as control of objectives.</characteristic>
               </characteristics>
             </profile>
           </profiles>
           <categoryLinks>
             <categoryLink id="cc74-a296-2aea-71da" name="Grand Strategy" hidden="false" targetId="5dff-3614-49fd-c3e4" primary="false"/>
+          </categoryLinks>
+          <costs>
+            <cost name="pts" typeId="points" value="0.0"/>
+          </costs>
+        </selectionEntry>
+        <selectionEntry id="3e0c-d455-e3c7-8e17" name="Crimson Larder" hidden="false" collective="false" import="true" type="upgrade">
+          <constraints>
+            <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" id="6878-cf9f-3284-69cf" type="max"/>
+          </constraints>
+          <profiles>
+            <profile id="847e-1f24-1c0f-48d4" name="Crimson Larder" hidden="false" typeId="9c01-ec20-32c1-0948" typeName="Grand Strategy">
+              <characteristics>
+                <characteristic name="Description" typeId="53c8-cc18-16d1-e890">When the battle ends, you complete this grand strategy if there are no HEROES from your opponent&apos;s starting army on the battlefield and the only friendly HEROES on the battlefield are VAMPIRES.</characteristic>
+              </characteristics>
+            </profile>
+          </profiles>
+          <categoryLinks>
+            <categoryLink id="1aa0-4144-363a-3bbe" name="Grand Strategy" hidden="false" targetId="5dff-3614-49fd-c3e4" primary="false"/>
+          </categoryLinks>
+          <costs>
+            <cost name="pts" typeId="points" value="0.0"/>
+          </costs>
+        </selectionEntry>
+        <selectionEntry id="24a0-94a6-965e-4b0a" name="The Danse Macabre" hidden="false" collective="false" import="true" type="upgrade">
+          <constraints>
+            <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" id="0974-40d1-e5f7-2f9b" type="max"/>
+          </constraints>
+          <profiles>
+            <profile id="426e-01eb-e824-8a0f" name="The Danse Macabre" hidden="false" typeId="9c01-ec20-32c1-0948" typeName="Grand Strategy">
+              <characteristics>
+                <characteristic name="Description" typeId="53c8-cc18-16d1-e890">When the battle ends, you complete this grand strategy if there are more friendly SUMMONABLE units than enemy units wholly within enemy territory.</characteristic>
+              </characteristics>
+            </profile>
+          </profiles>
+          <categoryLinks>
+            <categoryLink id="cfe4-67d1-66b3-7ed9" name="Grand Strategy" hidden="false" targetId="5dff-3614-49fd-c3e4" primary="false"/>
+          </categoryLinks>
+          <costs>
+            <cost name="pts" typeId="points" value="0.0"/>
+          </costs>
+        </selectionEntry>
+        <selectionEntry id="fab9-5e57-cf6c-8dce" name="Empire of Corpses" hidden="false" collective="false" import="true" type="upgrade">
+          <constraints>
+            <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" id="99a8-0938-1228-f627" type="max"/>
+          </constraints>
+          <profiles>
+            <profile id="8d22-9cea-8867-09fd" name="Empire of Corpses" hidden="false" typeId="9c01-ec20-32c1-0948" typeName="Grand Strategy">
+              <characteristics>
+                <characteristic name="Description" typeId="53c8-cc18-16d1-e890">When the battle ends, you complete this grand strategy if you replaced 3 or more friendly SUMMONABLE units that were destroyed during the battle.</characteristic>
+              </characteristics>
+            </profile>
+          </profiles>
+          <categoryLinks>
+            <categoryLink id="8739-d5d3-3564-1e96" name="Grand Strategy" hidden="false" targetId="5dff-3614-49fd-c3e4" primary="false"/>
           </categoryLinks>
           <costs>
             <cost name="pts" typeId="points" value="0.0"/>
@@ -10529,6 +10841,9 @@ You can set up 1 unit in the Crimson Keep for each unit you have set up on the b
                 <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" id="85d5-95a7-a3b0-c49a" type="max"/>
                 <constraint field="selections" scope="roster" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" id="03e5-d920-94ed-d497" type="min"/>
               </constraints>
+              <costs>
+                <cost name="pts" typeId="points" value="0.0"/>
+              </costs>
             </selectionEntry>
             <selectionEntry id="a15b-73ed-da8c-5999" name="Red Banqueters - 2+ Blood Knights" hidden="true" collective="false" import="true" type="upgrade">
               <modifiers>
@@ -10552,6 +10867,9 @@ You can set up 1 unit in the Crimson Keep for each unit you have set up on the b
                 <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" id="4258-bc16-72f3-b974" type="max"/>
                 <constraint field="selections" scope="roster" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" id="a458-1d55-4f1c-e4a6" type="min"/>
               </constraints>
+              <costs>
+                <cost name="pts" typeId="points" value="0.0"/>
+              </costs>
             </selectionEntry>
             <selectionEntry id="3964-f345-d578-dfec" name="Red Banqueters - Bloodseek Palanquin or Coven Throne" hidden="true" collective="false" import="true" type="upgrade">
               <modifiers>
@@ -10588,6 +10906,9 @@ You can set up 1 unit in the Crimson Keep for each unit you have set up on the b
                 <constraint field="selections" scope="roster" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" id="22f1-b501-b3b2-3ba2" type="min"/>
                 <constraint field="selections" scope="roster" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" id="55e1-dc3e-ecc6-d9d8" type="max"/>
               </constraints>
+              <costs>
+                <cost name="pts" typeId="points" value="0.0"/>
+              </costs>
             </selectionEntry>
           </selectionEntries>
         </selectionEntryGroup>
@@ -10839,6 +11160,9 @@ You can set up 1 unit in the Crimson Keep for each unit you have set up on the b
                 <constraint field="selections" scope="roster" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" id="5409-6306-6451-4ed5" type="max"/>
                 <constraint field="selections" scope="roster" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" id="6b71-d839-f0b5-ca78" type="min"/>
               </constraints>
+              <costs>
+                <cost name="pts" typeId="points" value="0.0"/>
+              </costs>
             </selectionEntry>
             <selectionEntry id="b28a-d604-cf4b-7dec" name="Deathmarch - 1-3 Black Knights" hidden="true" collective="false" import="true" type="upgrade">
               <modifiers>
@@ -10868,6 +11192,9 @@ You can set up 1 unit in the Crimson Keep for each unit you have set up on the b
                 <constraint field="selections" scope="roster" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" id="dd51-86b3-d361-e5e1" type="max"/>
                 <constraint field="selections" scope="roster" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" id="66da-6282-c14a-4e8c" type="min"/>
               </constraints>
+              <costs>
+                <cost name="pts" typeId="points" value="0.0"/>
+              </costs>
             </selectionEntry>
             <selectionEntry id="befd-4045-0d38-ccae" name="Deathmarch - 1-3 Grave Guard" hidden="true" collective="false" import="true" type="upgrade">
               <modifiers>
@@ -10897,6 +11224,9 @@ You can set up 1 unit in the Crimson Keep for each unit you have set up on the b
                 <constraint field="selections" scope="roster" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" id="63ea-5b91-054c-915a" type="max"/>
                 <constraint field="selections" scope="roster" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" id="82d2-8c17-6ca3-57ba" type="min"/>
               </constraints>
+              <costs>
+                <cost name="pts" typeId="points" value="0.0"/>
+              </costs>
             </selectionEntry>
             <selectionEntry id="88f1-6e88-6d82-c109" name="Deathmarch - 2+ Deathrattle Skeletons" hidden="true" collective="false" import="true" type="upgrade">
               <modifiers>
@@ -10920,6 +11250,9 @@ You can set up 1 unit in the Crimson Keep for each unit you have set up on the b
                 <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" id="2a3c-1d79-bff8-1ce8" type="max"/>
                 <constraint field="selections" scope="roster" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" id="4ccc-36c7-69b9-19aa" type="min"/>
               </constraints>
+              <costs>
+                <cost name="pts" typeId="points" value="0.0"/>
+              </costs>
             </selectionEntry>
           </selectionEntries>
         </selectionEntryGroup>

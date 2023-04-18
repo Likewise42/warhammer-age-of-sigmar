@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<catalogue id="0364-070f-023f-64d9" name="Death - Soulblight Gravelords" revision="30" battleScribeVersion="2.03" library="false" gameSystemId="e51d-b1a3-75fc-dc33" gameSystemRevision="161" xmlns="http://www.battlescribe.net/schema/catalogueSchema">
+<catalogue id="0364-070f-023f-64d9" name="Death - Soulblight Gravelords" revision="32" battleScribeVersion="2.03" library="false" gameSystemId="e51d-b1a3-75fc-dc33" gameSystemRevision="161" xmlns="http://www.battlescribe.net/schema/catalogueSchema">
   <categoryEntries>
     <categoryEntry id="d72b-b718-4010-345d" name="DEINTALOS THE EXILE" hidden="false"/>
     <categoryEntry id="68d2-327f-6699-51f3" name="THE EXILED DEAD" hidden="false"/>
@@ -236,6 +236,24 @@
         </entryLink>
         <entryLink id="ce18-33d4-9b46-688c" name="Spell Lores" hidden="false" collective="false" import="true" targetId="8417-93fc-9562-a748" type="selectionEntryGroup"/>
         <entryLink id="1b6e-1dbe-976a-1358" name="Incarnate Bonding" hidden="false" collective="false" import="true" targetId="c890-acbd-0c80-55c9" type="selectionEntryGroup"/>
+        <entryLink id="085c-a3a2-d351-a9ca" name="Command Traits" hidden="true" collective="false" import="true" targetId="eda1-7945-4fea-a145" type="selectionEntryGroup">
+          <modifiers>
+            <modifier type="set" field="hidden" value="false">
+              <conditions>
+                <condition field="selections" scope="roster" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="9fec-247c-d146-ead4" type="greaterThan"/>
+              </conditions>
+            </modifier>
+          </modifiers>
+        </entryLink>
+        <entryLink id="087d-d85b-4e1c-79ff" name="Artefacts" hidden="true" collective="false" import="true" targetId="a2c1-3fba-5acb-d560" type="selectionEntryGroup">
+          <modifiers>
+            <modifier type="set" field="hidden" value="false">
+              <conditions>
+                <condition field="selections" scope="roster" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="9fec-247c-d146-ead4" type="greaterThan"/>
+              </conditions>
+            </modifier>
+          </modifiers>
+        </entryLink>
       </entryLinks>
       <costs>
         <cost name="pts" typeId="points" value="220.0"/>
@@ -379,14 +397,29 @@
             <characteristic name="Description" typeId="f882-48d5-21a4-1787">Pick 1 friendly SUMMONABLE unit that is more than 3&quot; from all enemy units. You complete this battle tactic if that friendly unit is destroyed during this turn. </characteristic>
           </characteristics>
         </profile>
-        <profile id="c592-fd9b-4a1e-061d" name="Lust for Blood" hidden="false" typeId="eba0-4bf6-65fe-fdbc" typeName="Battle Tactic">
+        <profile id="c592-fd9b-4a1e-061d" name="Cursed Unlife" hidden="false" typeId="eba0-4bf6-65fe-fdbc" typeName="Battle Tactic">
           <characteristics>
-            <characteristic name="Description" typeId="f882-48d5-21a4-1787">You complete this battle tactic if your general or two other friendly VAMPIRE models used The Hunger and/or the Mortarch of Blood ability to heal any wounds during this turn. </characteristic>
+            <characteristic name="Description" typeId="f882-48d5-21a4-1787">You complete this battle tactic if your general or two other friendly VAMPIRE units are healed using The Hunger ability during this turn.</characteristic>
           </characteristics>
         </profile>
-        <profile id="819f-2d38-a2e9-d539" name="Unstoppable Armies" hidden="false" typeId="eba0-4bf6-65fe-fdbc" typeName="Battle Tactic">
+        <profile id="819f-2d38-a2e9-d539" name="The Grasping Dead" hidden="false" typeId="eba0-4bf6-65fe-fdbc" typeName="Battle Tactic">
           <characteristics>
-            <characteristic name="Description" typeId="f882-48d5-21a4-1787">You complete this battle tactic if, during this turn, you roll a 5+ when determining if you can replace a destroyed unit from your army using the Endless Legions battle trait.</characteristic>
+            <characteristic name="Description" typeId="f882-48d5-21a4-1787">Pick 1 friendly SUMMONABLE unit within 3&quot; of any enemy units. You complete this tactic if that unit is within 3&quot; of any enemy units at the end of this turn.</characteristic>
+          </characteristics>
+        </profile>
+        <profile id="94ce-2125-abed-34b9" name="The Choicest Vintage" hidden="false" typeId="eba0-4bf6-65fe-fdbc" typeName="Battle Tactic">
+          <characteristics>
+            <characteristic name="Description" typeId="f882-48d5-21a4-1787">Pick 1 enemy HERO on the battlefield.  You complete this tactic if that enemy HERO is slain during this turn by an attack made by a friendly VAMPIRE HERO.</characteristic>
+          </characteristics>
+        </profile>
+        <profile id="ad95-5a80-72c6-bc67" name="Expand the Grave-empires" hidden="false" typeId="eba0-4bf6-65fe-fdbc" typeName="Battle Tactic">
+          <characteristics>
+            <characteristic name="Description" typeId="f882-48d5-21a4-1787">You complete this tactic if you control 2 or more objectives wholly outside your territory and each of those objectives is contested by a friendly SUMMONABLE or VAMPIRE unit.</characteristic>
+          </characteristics>
+        </profile>
+        <profile id="95c5-32e5-ca0a-5980" name="Endless Nightmare" hidden="false" typeId="eba0-4bf6-65fe-fdbc" typeName="Battle Tactic">
+          <characteristics>
+            <characteristic name="Description" typeId="f882-48d5-21a4-1787">Pick 1 friendly SOULBLIGHT GRAVELORDS SUMMONABLE unit on the battlefield.  You complete this tactic if 6 or more slain models are returned to that unit during this turn.</characteristic>
           </characteristics>
         </profile>
       </profiles>
@@ -444,6 +477,7 @@
         <categoryLink id="d66c-97c7-e217-6840" name="HERO" hidden="false" targetId="4e0e-664d-51ea-0929" primary="false"/>
         <categoryLink id="a730-cb91-df19-36c3" name="WIGHT KING" hidden="false" targetId="3844-597f-8938-7d8d" primary="false"/>
         <categoryLink id="7f0f-44b3-c32d-b017" name="KING MORLAK VELMORN" hidden="false" targetId="312a-dc3d-4c6a-2687" primary="false"/>
+        <categoryLink id="06de-09d0-9231-d26b" name="SUMMONABLE" hidden="false" targetId="d51a-b7de-3b60-a231" primary="false"/>
       </categoryLinks>
       <selectionEntries>
         <selectionEntry id="91e2-7a73-adaa-b47d" name="Baleful Tomb Blade" hidden="false" collective="false" import="true" type="upgrade">
@@ -477,6 +511,24 @@
         </entryLink>
         <entryLink id="a26f-9411-d674-bc0c" name="Battalions" hidden="false" collective="false" import="true" targetId="9df7-269b-fa20-74b2" type="selectionEntryGroup"/>
         <entryLink id="88c0-99e6-057f-7925" name="Incarnate Bonding" hidden="false" collective="false" import="true" targetId="c890-acbd-0c80-55c9" type="selectionEntryGroup"/>
+        <entryLink id="39bc-886c-6cfb-418b" name="Command Traits" hidden="true" collective="false" import="true" targetId="eda1-7945-4fea-a145" type="selectionEntryGroup">
+          <modifiers>
+            <modifier type="set" field="hidden" value="false">
+              <conditions>
+                <condition field="selections" scope="roster" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="9fec-247c-d146-ead4" type="greaterThan"/>
+              </conditions>
+            </modifier>
+          </modifiers>
+        </entryLink>
+        <entryLink id="77d3-0fac-695d-638c" name="Artefacts" hidden="true" collective="false" import="true" targetId="a2c1-3fba-5acb-d560" type="selectionEntryGroup">
+          <modifiers>
+            <modifier type="set" field="hidden" value="false">
+              <conditions>
+                <condition field="selections" scope="roster" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="9fec-247c-d146-ead4" type="greaterThan"/>
+              </conditions>
+            </modifier>
+          </modifiers>
+        </entryLink>
       </entryLinks>
       <costs>
         <cost name="pts" typeId="points" value="220.0"/>
@@ -537,6 +589,7 @@
         <categoryLink id="9bca-f4e0-5447-aa52" name="SOULBLIGHT GRAVELORDS" hidden="false" targetId="3d31-12d5-6735-011c" primary="false"/>
         <categoryLink id="c48f-297a-2d7d-dbe5" name="GRAVE GUARD" hidden="false" targetId="e8f4-3b13-f9d1-eb56" primary="false"/>
         <categoryLink id="5b9f-1853-19d1-1aef" name="THE SONS OF VELMORN" hidden="false" targetId="508f-5e4f-8ffd-ff24" primary="false"/>
+        <categoryLink id="0f95-8a35-7be1-08cd" name="SUMMONABLE" hidden="false" targetId="d51a-b7de-3b60-a231" primary="false"/>
       </categoryLinks>
       <selectionEntries>
         <selectionEntry id="2630-90c0-b6ab-f267" name="Great Wight Blade" hidden="false" collective="false" import="true" type="upgrade">
@@ -905,6 +958,24 @@
         </entryLink>
         <entryLink id="57cd-f4fa-71db-b7ca" name="Battalions" hidden="false" collective="false" import="true" targetId="9df7-269b-fa20-74b2" type="selectionEntryGroup"/>
         <entryLink id="8ca8-e589-c7f2-0900" name="Incarnate Bonding" hidden="false" collective="false" import="true" targetId="c890-acbd-0c80-55c9" type="selectionEntryGroup"/>
+        <entryLink id="a38d-c5e3-2868-9a8f" name="Command Traits" hidden="true" collective="false" import="true" targetId="eda1-7945-4fea-a145" type="selectionEntryGroup">
+          <modifiers>
+            <modifier type="set" field="hidden" value="false">
+              <conditions>
+                <condition field="selections" scope="roster" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="9fec-247c-d146-ead4" type="greaterThan"/>
+              </conditions>
+            </modifier>
+          </modifiers>
+        </entryLink>
+        <entryLink id="a3ce-7052-ae06-08a7" name="Artefacts" hidden="true" collective="false" import="true" targetId="a2c1-3fba-5acb-d560" type="selectionEntryGroup">
+          <modifiers>
+            <modifier type="set" field="hidden" value="false">
+              <conditions>
+                <condition field="selections" scope="roster" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="9fec-247c-d146-ead4" type="greaterThan"/>
+              </conditions>
+            </modifier>
+          </modifiers>
+        </entryLink>
       </entryLinks>
       <costs>
         <cost name="pts" typeId="points" value="135.0"/>
